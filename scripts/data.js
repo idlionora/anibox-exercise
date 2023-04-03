@@ -154,6 +154,25 @@ export const trending = [
 
 export const banner = trending.slice(0, 5);
 
+const loadingHomeItem = {
+	id: 999999,
+	title: { romaji: 'Fetching Data...', english: 'Fetching Data...' },
+	genres: ['Loading'],
+	description: 'Data is currently being fetched, please wait.',
+	format: 'SPECIAL',
+	coverImage: '/assets/image-not-available.png',
+	bannerImage: '/assets/image-not-available.png',
+	year: new Date().getFullYear(),
+};
+
+export const loadingHomeData = [
+	loadingHomeItem,
+	loadingHomeItem,
+	loadingHomeItem,
+	loadingHomeItem,
+	loadingHomeItem,
+];
+
 export const detail = {
   id: 21519,
   title: { english: 'Your Name.', romaji: 'Kimi no Na wa.' },

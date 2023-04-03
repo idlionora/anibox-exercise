@@ -35,7 +35,7 @@ export const section = ({ name, data }) => {
   return `
     <section id="${name.toLowerCase()}" class="mt-16 relative">
       <div class="px-16">
-        <h4 class="text-2xl font-bold dark:text-white">${name}</h4>
+        <h4 class="text-2xl font-bold text-white">${name.replace(/-/g, ' ')}</h4>
         <div class="relative mt-4">
           <div id="${name.toLowerCase()}-container"
             class="flex flex-nowrap overflow-x-scroll scroll-smooth hide-scroll-bar gap-x-4 snap-x snap-mandatory">

@@ -1,4 +1,5 @@
 ## Tugas Frontend Kelasfullstack
+Disusun oleh [Nur Askiah](https://github.com/nuraskiah/).
 
 1. Clone repository ini dengan command `git clone` atau download source codenya.
 2. Kerjakan daftar tugas di bawah.
@@ -16,11 +17,11 @@
 
 ## Daftar Tugas
 - Home page (home.js)
-  - [ ] Ambil data untuk carousel (limit=5)
-  - [ ] Ambil data trending
-  - [ ] Ambil data untuk section lain
-  - [ ] Tambahkan section pada variabel `listSection`
-  - [ ] Hapus import variabel yang tidak terpakai
+  - [x] Ambil data untuk carousel (limit=5)
+  - [x] Ambil data trending
+  - [x] Ambil data untuk section lain
+  - [x] Tambahkan section pada variabel `listSection`
+  - [x] Hapus import variabel yang tidak terpakai
   
 - Search result page (search.js)
   - [ ] Ambil data search (limit bebas)
