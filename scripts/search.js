@@ -21,14 +21,16 @@ searchKeyword.innerHTML = query;
 
 //? ambil data hasil searching dari API
 const getSearchData = async (page) => {
-  resultContainer.innerHTML = '<p>Fetching data...</p>';
-  searchKeyword.innerHTML = keywordInput.value;
+	resultContainer.innerHTML = '<p>Fetching data...</p>';
+	searchKeyword.innerHTML = keywordInput.value;
+	buttonLeft.disabled = true;
+	buttonRight.disabled = true;
 	let searchResult = [];
-	
+
 	if (keywordInput.value === '') {
 		resultContainer.innerHTML = '<p>Search bar is empty.</p>';
 		return;
-	} 
+	}
 
 	try {
 		const response = await axios.get(
@@ -56,30 +58,34 @@ const getSearchData = async (page) => {
 		resultContainer.innerHTML = `Failed to get search item data: ${err.message}`;
 	}
 
-	//toggle next button function
-	const nextResponse = await axios.get(
-		`https://animeapi-askiahnur1.b4a.run/anime?title=${keywordInput.value}&limit=20&page=${
-			page + 1
-		}`
-	);
-	if (nextResponse?.data && !nextResponse.data.length) {
-		buttonRight.disabled = true;
+	//toggle prev button function
+	if (currentPage < 2) {
+		buttonLeft.disabled = true;
 	} else {
-		buttonRight.disabled = false;
+		buttonLeft.disabled = false;
 	}
 
-	//toggle prev button function
-  if (currentPage < 2) {
-    buttonLeft.disabled = true;
-  } else {
-    buttonLeft.disabled = false;
-  }
-
+	//toggle next button function
+	try {
+		const nextResponse = await axios.get(
+			`https://animeapi-askiahnur1.b4a.run/anime?title=${keywordInput.value}&limit=20&page=${
+				page + 1
+			}`
+		);
+		if (!nextResponse.data.length) {
+			buttonRight.disabled = true;
+		} else {
+			buttonRight.disabled = false;
+		}
+	} catch (err) {
+		console.error('Failed to check the next search page: ', err.message);
+		buttonRight.disabled = true;
+	}
 };
 getSearchData(1);
 
 const clickPageArrow = (whichPage) => {
-  whichPage === 'next'? currentPage++ : currentPage--;
+	whichPage === 'next' ? currentPage++ : currentPage--;
 	getSearchData(currentPage);
 	pageDisplay.innerHTML = currentPage;
 };
@@ -88,7 +94,7 @@ const debounceSearch = () => {
 	let timeout;
 	return () => {
 		clearTimeout(timeout);
-		timeout = setTimeout(()=>getSearchData(1), 1300);
+		timeout = setTimeout(() => getSearchData(1), 1300);
 	};
 };
 
