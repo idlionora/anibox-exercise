@@ -24,10 +24,10 @@ Disusun oleh [Nur Askiah](https://github.com/nuraskiah/).
   - [x] Hapus import variabel yang tidak terpakai
   
 - Search result page (search.js)
-  - [ ] Ambil data search (limit bebas)
-  - [ ] Hapus import variabel yang tidak terpakai
-  - [ ] (Optional) Load more pada hasil search (pagination)
-  - [ ] (Optional) Live searching dengan debounce
+  - [x] Ambil data search (limit bebas)
+  - [x] Hapus import variabel yang tidak terpakai
+  - [x] (Optional) Load more pada hasil search (pagination)
+  - [x] (Optional) Live searching dengan debounce
 
 - Detail page (detail.js)
   - [ ] Ambil data dari API
