@@ -1,3 +1,31 @@
+const loadingItem = {
+	id: 999999,
+	title: { romaji: 'Fetching Data...', english: 'Fetching Data...' },
+	genres: ['Loading'],
+	description: 'Data is currently being fetched, please wait.',
+	format: 'SPECIAL',
+	coverImage: '/assets/image-not-available.png',
+	bannerImage: '/assets/image-not-available.png',
+	year: new Date().getFullYear(),
+};
+export const loadingHomeData = [loadingItem, loadingItem, loadingItem, loadingItem, loadingItem];
+export const loadingDetail = {
+	id: 999999,
+	title: { english: 'Fetching Data...', romaji: 'Fetching Data...' },
+	status: 'FINISHED',
+	format: 'SPECIAL',
+	episodes: 1,
+	coverImage: '/assets/image-not-available.png',
+	bannerImage: '/assets/image-not-available.png',
+	description: 'Data is currently being fetched, please wait.',
+	genres: ['Loading'],
+	trailer: {},
+	averageScore: 0,
+	popularity: 0,
+	streamingEpisodes: [],
+	year: new Date().getFullYear(),
+};
+
 export const trending = [
 	{
 		id: 137822,
@@ -151,19 +179,6 @@ export const trending = [
 ];
 
 export const banner = trending.slice(0, 5);
-
-const loadingItem = {
-	id: 999999,
-	title: { romaji: 'Fetching Data...', english: 'Fetching Data...' },
-	genres: ['Loading'],
-	description: 'Data is currently being fetched, please wait.',
-	format: 'SPECIAL',
-	coverImage: '/assets/image-not-available.png',
-	bannerImage: '/assets/image-not-available.png',
-	year: new Date().getFullYear(),
-};
-
-export const loadingHomeData = [loadingItem, loadingItem, loadingItem, loadingItem, loadingItem];
 
 export const detail = {
 	id: 21519,

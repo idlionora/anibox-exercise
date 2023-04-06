@@ -30,12 +30,12 @@ Disusun oleh [Nur Askiah](https://github.com/nuraskiah/).
   - [x] (Optional) Live searching dengan debounce
 
 - Detail page (detail.js)
-  - [ ] Ambil data dari API
-  - [ ] Masukkan data ke masing-masing elemen (description, banner, cover)
-  - [ ] Hapus import variabel yang tidak terpakai
-  - [ ] Tambahkan element untuk menampilkan daftar genre di file detail.html
+  - [x] Ambil data dari API
+  - [x] Masukkan data ke masing-masing elemen (description, banner, cover)
+  - [x] Hapus import variabel yang tidak terpakai
+  - [x] Tambahkan element untuk menampilkan daftar genre di file detail.html
   - [ ] Tambahkan script untuk menampilkan daftar genre
-  - [ ] Hapus import variabel yang tidak terpakai
+  - [x] Hapus import variabel yang tidak terpakai
   - [ ] (Optional) Gunakan data yang belum terpakai dari API, seperti trailer, episode, dll
   - [ ] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
 
