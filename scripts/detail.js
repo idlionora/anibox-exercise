@@ -8,6 +8,7 @@ const descriptionEl = document.getElementById('description');
 const bannerImageEl = document.getElementById('banner-image');
 const coverImageEl = document.getElementById('cover-image');
 const infoEl = document.getElementById('info');
+const infoListEl = document.getElementById('info-list')
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -46,6 +47,25 @@ const updateDetailPage = (data) => {
 		}
   });
   infoEl.innerHTML = infoString;
+
+  const infoList = {
+		'Title': data.title.romaji,
+    "English Title": data.title.english,
+		'Format': data.format,
+		'Episode': data.episodes,
+		'Status': data.status,
+		'Genres': data.genres,
+		'Popularity': data.popularity,
+  };
+
+  const infoKeyArray = Object.keys(infoList);
+  const infoListString = infoKeyArray.map((infoKey, index) => { let infoItem = infoList[infoKey];
+    if (infoKey == 'Genres') {infoItem = infoList[infoKey].join(', ')}; 
+    return `<li id='infokey${index}'><b>${(infoKey == 'Episode' && infoList[infoKey] > 1)? infoKey + 's': infoKey}:</b> ${!!infoItem?infoItem:'?'}</li>`;
+  }).join(' ');
+  console.log(infoListString);
+
+  infoListEl.innerHTML = infoListString;
 }
 updateDetailPage(loadingDetail)
 getDetailData()
