@@ -35,14 +35,30 @@ const getDetailData = async () => {
 	}
 };
 
+function toggleDesc() {
+	let descPoints = document.getElementById('desc-points');
+	let descButton = document.getElementById('desc-button');
+	let descContinue = document.getElementById('desc-continue');
+
+	if (descContinue.classList.contains('hidden')) {
+		descPoints.classList.remove('inline');
+		descPoints.classList.add('hidden');
+		descContinue.classList.remove('hidden');
+		descContinue.classList.add('inline');
+		descButton.innerHTML = '(<b>Show Less</b>)';
+	} else {
+		descPoints.classList.remove('hidden');
+		descPoints.classList.add('inline');
+		descContinue.classList.remove('inline');
+		descContinue.classList.add('hidden');
+		descButton.innerHTML = '(<b>Show More</b>)';
+	}
+}
+
 const updateDetailPage = (data) => {
 	titleEl.innerHTML = data.title.romaji;
-	descriptionEl.innerHTML = data.description;
 	bannerImageEl.src = data.bannerImage || loadingDetail.bannerImage;
 	coverImageEl.src = data.coverImage || loadingDetail.coverImage;
-	if (!!data.trailer?.site && !!data.trailer?.id)
-		trailerEl.innerHTML = `<iframe id="trailer-vid" width="420" height="315" src="https://www.${data.trailer.site}.com/embed/${data.trailer.id}" frameborder="0">
-            </iframe>`;
 
 	const info = [
 		data.year,
@@ -57,6 +73,25 @@ const updateDetailPage = (data) => {
 		}
 	});
 	infoEl.innerHTML = infoString;
+
+	let descString = data.description;
+	if (data.description.length > 320) {
+		descString = `
+			${data.description.slice(0, 320)}
+			<span id="desc-points" class="inline">... </span>
+			<span id="desc-continue" class="hidden">${data.description.slice(320)}</span>
+			<button id="desc-button" class="inline not-italic"><b>(Show More)</b></button>
+		`
+		descriptionEl.innerHTML = descString;
+		descriptionEl.addEventListener('click', toggleDesc)
+	} else {
+		descriptionEl.innerHTML = descString;
+	} 
+	
+
+	if (!!data.trailer?.site && !!data.trailer?.id)
+		trailerEl.innerHTML = `<iframe id="trailer-vid" width="420" height="315" src="https://www.${data.trailer.site}.com/embed/${data.trailer.id}" frameborder="0">
+            </iframe>`;
 
 	const infoList = {
 		Title: data.title.romaji,
@@ -100,5 +135,4 @@ const updateDetailPage = (data) => {
 updateDetailPage(loadingDetail);
 getDetailData();
 
-//? tambahkan script untuk menampilkan daftar genre
-// .....
+
