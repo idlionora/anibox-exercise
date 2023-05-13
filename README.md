@@ -37,7 +37,7 @@ Disusun oleh [Nur Askiah](https://github.com/nuraskiah/).
   - [x] Tambahkan script untuk menampilkan daftar genre
   - [x] Hapus import variabel yang tidak terpakai
   - [x] (Optional) Gunakan data yang belum terpakai dari API, seperti trailer, episode, dll
-  - [ ] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
+  - [x] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
 
 ## API
 
