@@ -2,7 +2,7 @@ export const navbar = `
   <nav class="bg-black border-gray-200 py-4">
     <div class="mx-16 flex flex-wrap items-center justify-between">
       <a href="/" class="flex items-center">
-        <img src="https://dl.airtable.com/.attachments/38db515ebcb696c2eeb826e31274046b/473cf848/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+        <img src="/assets/logo-flowbite.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">AniBox</span>
       </a>
       <div class="flex md:order-2">
